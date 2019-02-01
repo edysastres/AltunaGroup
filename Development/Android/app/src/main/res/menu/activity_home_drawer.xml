@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_menu_home"
+                android:title="Inicio"/>
+        <item
+                android:id="@+id/nav_payment"
+                android:icon="@drawable/ic_menu_payment"
+                android:title="Cobranza"/>
+        <item
+                android:id="@+id/nav_inventory"
+                android:icon="@drawable/ic_menu_prices"
+                android:title="Inventarios"/>
+        <item
+                android:id="@+id/nav_locksmith"
+                android:icon="@drawable/ic_menu_inventory"
+                android:title="Cerrajeros"/>
+    </group>
+
+    <item android:title="Acciones">
+        <menu>
+            <item
+                    android:id="@+id/nav_config"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Configuración"/>
+            <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_menu_logout"
+                    android:title="Cerrar Sesión"/>
+            <item
+                    android:id="@+id/nav_login"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Login"/>
+        </menu>
+    </item>
+
+</menu>
