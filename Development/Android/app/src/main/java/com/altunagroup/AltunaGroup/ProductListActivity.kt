@@ -1,5 +1,6 @@
 package com.altunagroup.AltunaGroup
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -24,7 +25,11 @@ class ProductListActivity : AppCompatActivity() {
         rv_products.addOnItemClickListener(object: OnItemClickListener {
             override fun onItemClicked(position: Int, view: View) {
                 // Your logic
-                Snackbar.make(view, "" + position, Snackbar.LENGTH_SHORT).show()
+                //Snackbar.make(view, "" + position, Snackbar.LENGTH_SHORT).show()
+                var intent = Intent(this@ProductListActivity, ReferenceDetailActivity::class.java)
+                intent.putExtra("idReference", position)
+                startActivity(intent)
+
             }
         })
     }

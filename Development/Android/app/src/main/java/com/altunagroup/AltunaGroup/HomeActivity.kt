@@ -49,9 +49,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_inventory -> {
                 ChooseCustomerFragment.newInstance(2)
             }
-            R.id.nav_locksmith -> {
+            /*R.id.nav_locksmith -> {
                 LockSmithsFragment()
-            }
+            }*/
             R.id.nav_config -> {
                 SettingsFragment()
             }
@@ -83,9 +83,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_inventory -> {
                 toolbar.title = "Elegir Cliente"
             }
-            R.id.nav_locksmith -> {
+            /*R.id.nav_locksmith -> {
                 toolbar.title = "Cerrajeros"
-            }
+            }*/
             R.id.nav_config -> {
                 toolbar.title = "Configuraciones"
             }
@@ -98,6 +98,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (item.itemId == R.id.nav_login) {
             //Intent to Login Activity
             var intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        } else if (item.itemId == R.id.nav_locksmith) {
+            //Intent to Login Activity
+            var intent = Intent(this, LocksmithActivity::class.java)
             startActivity(intent)
         } else {
             displayScreen(item.itemId)

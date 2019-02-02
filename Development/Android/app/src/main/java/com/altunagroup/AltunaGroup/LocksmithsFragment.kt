@@ -1,12 +1,16 @@
 package com.altunagroup.AltunaGroup
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_choose_customer.*
+import kotlinx.android.synthetic.main.fragment_locksmiths.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -17,13 +21,13 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [LockSmithsFragment.OnFragmentInteractionListener] interface
+ * [LocksmithsFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [LockSmithsFragment.newInstance] factory method to
+ * Use the [LocksmithsFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class LockSmithsFragment : Fragment() {
+class LocksmithsFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -43,6 +47,26 @@ class LockSmithsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_locksmiths, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        var customers = ArrayList<Customer>()
+        customers.add(Customer("INTERLINE BRANDS", "PO BOX 2317 Jacksonville, Florida"))
+        customers.add(Customer("MAZDA", "Handled St 15 Tennesse, Tennesse"))
+        customers.add(Customer("INFINITE SUPPLY", "Infinite Loop 8 Dallas, México"))
+        customers.add(Customer("QUEEN", "Carranza 27 Guadalajara, Jalisco"))
+        customers.add(Customer("Guns & Roses", "Allende 1234 San Luis, San Luis"))
+        customers.add(Customer("Urrea", "Cultural 12 Guadalajara, Jalisco"))
+        customers.add(Customer("Llaves la cueva", "Hidalgo 217 Zapopan, Jalisco"))
+        customers.add(Customer("Keystorm", "Alcalde 237 Tlaquepaque, Jalisco"))
+        customers.add(Customer("La Llave Maestra", "BOX 2317 Tlaquepaque, Jalisco"))
+        customers.add(Customer("Internazionale", "De la Mora 27 Tonalá, Jalisco"))
+
+        rv_locksmiths.layoutManager = LinearLayoutManager(this.context)
+        rv_locksmiths.adapter = CustomersAdapter(customers, this.context!!)
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -87,12 +111,12 @@ class LockSmithsFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment InventoriesFragment.
+         * @return A new instance of fragment LocksmithsFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            LockSmithsFragment().apply {
+            LocksmithsFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
