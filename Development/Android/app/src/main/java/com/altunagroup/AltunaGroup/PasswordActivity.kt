@@ -20,7 +20,7 @@ class PasswordActivity : AppCompatActivity() {
                 Snackbar.LENGTH_INDEFINITE
             )
                 .setAction("OK", View.OnClickListener {
-
+                    finish()
                 })
                 .show()
         }

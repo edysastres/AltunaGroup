@@ -1,7 +1,6 @@
 package com.altunagroup.AltunaGroup
 
 import android.content.Context
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -9,8 +8,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_choose_customer.*
+import android.widget.SearchView
 import kotlinx.android.synthetic.main.fragment_locksmiths.*
+
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -33,12 +34,31 @@ class LocksmithsFragment : Fragment() {
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
 
+
+    var locksmiths = ArrayList<Customer>()
+    var locksmithsForSearch = ArrayList<Customer>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        locksmiths = ArrayList<Customer>()
+        locksmiths.add(Customer("INTERLINE BRANDS", "PO BOX 2317 Jacksonville, Florida"))
+        locksmiths.add(Customer("MAZDA", "Handled St 15 Tennesse, Tennesse"))
+        locksmiths.add(Customer("INFINITE SUPPLY", "Infinite Loop 8 Dallas, México"))
+        locksmiths.add(Customer("QUEEN", "Carranza 27 Guadalajara, Jalisco"))
+        locksmiths.add(Customer("Guns & Roses", "Allende 1234 San Luis, San Luis"))
+        locksmiths.add(Customer("Urrea", "Cultural 12 Guadalajara, Jalisco"))
+        locksmiths.add(Customer("Llaves la cueva", "Hidalgo 217 Zapopan, Jalisco"))
+        locksmiths.add(Customer("Keystorm", "Alcalde 237 Tlaquepaque, Jalisco"))
+        locksmiths.add(Customer("La Llave Maestra", "BOX 2317 Tlaquepaque, Jalisco"))
+        locksmiths.add(Customer("Internazionale", "De la Mora 27 Tonalá, Jalisco"))
+
+        locksmithsForSearch = locksmiths
+
     }
 
     override fun onCreateView(
@@ -52,21 +72,44 @@ class LocksmithsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var customers = ArrayList<Customer>()
-        customers.add(Customer("INTERLINE BRANDS", "PO BOX 2317 Jacksonville, Florida"))
-        customers.add(Customer("MAZDA", "Handled St 15 Tennesse, Tennesse"))
-        customers.add(Customer("INFINITE SUPPLY", "Infinite Loop 8 Dallas, México"))
-        customers.add(Customer("QUEEN", "Carranza 27 Guadalajara, Jalisco"))
-        customers.add(Customer("Guns & Roses", "Allende 1234 San Luis, San Luis"))
-        customers.add(Customer("Urrea", "Cultural 12 Guadalajara, Jalisco"))
-        customers.add(Customer("Llaves la cueva", "Hidalgo 217 Zapopan, Jalisco"))
-        customers.add(Customer("Keystorm", "Alcalde 237 Tlaquepaque, Jalisco"))
-        customers.add(Customer("La Llave Maestra", "BOX 2317 Tlaquepaque, Jalisco"))
-        customers.add(Customer("Internazionale", "De la Mora 27 Tonalá, Jalisco"))
+
+
+        searchViewLocksmiths.queryHint = "Cerrajero:"
+        searchViewLocksmiths.isFocusable = false
+        searchViewLocksmiths.isIconified = false
+        searchViewLocksmiths.clearFocus()
 
         rv_locksmiths.layoutManager = LinearLayoutManager(this.context)
-        rv_locksmiths.adapter = CustomersAdapter(customers, this.context!!)
+        rv_locksmiths.adapter = CustomersAdapter(locksmithsForSearch, this.context!!)
 
+
+        rv_locksmiths.addOnItemClickListener(object: OnItemClickListener {
+            override fun onItemClicked(position: Int, view: View) {
+                // Your logic
+                //searchViewLocksmiths.setQuery("",false)
+                searchViewLocksmiths.clearFocus()
+                val fragment = NewLocksmithFragment()
+                val fragmentManager = activity!!.supportFragmentManager
+                val fragmentTransaction = fragmentManager.beginTransaction()
+                //fragmentTransaction.replace(, fragment)
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+            }
+        })
+
+        searchViewLocksmiths.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+            override fun onQueryTextChange(text: String?): Boolean {
+                //var c = ArrayList<Customer>()
+                locksmithsForSearch = locksmiths.filter { locksmith -> locksmith.name.contains(text!!,true) } as ArrayList<Customer>
+                rv_locksmiths.adapter = CustomersAdapter(locksmithsForSearch, context!!)
+
+                return false
+            }
+
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                return false
+            }
+        })
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -9,6 +9,18 @@ class LocksmithActivity : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
 
+        when (item.itemId) {
+            R.id.navigation_locksmiths -> {
+                title = "Cerrajeros"
+            }
+            R.id.navigation_new_locksmith -> {
+                title = "Nuevo Registro"
+            }
+            else -> {
+                title = "Cerrajeros"
+            }
+        }
+
         val fragment = when (item.itemId) {
             R.id.navigation_locksmiths -> {
                 LocksmithsFragment()

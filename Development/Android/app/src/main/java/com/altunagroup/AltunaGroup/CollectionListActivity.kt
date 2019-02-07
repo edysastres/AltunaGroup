@@ -13,11 +13,16 @@ import kotlinx.android.synthetic.main.activity_collection_list.*
 
 class CollectionListActivity : AppCompatActivity() {
 
+    lateinit var preferencesHelper: PreferencesHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collection_list)
 
-        title = "Cobranza"
+
+        preferencesHelper = PreferencesHelper(this)
+
+        title = "Cobranza - " + preferencesHelper.customerName
 
         var invoices = arrayListOf("","","","","","","","","","","","")
 

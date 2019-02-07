@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.customer_list_item.view.*
 
-class CustomersAdapter (val items: ArrayList<Customer>, val context: Context) : RecyclerView.Adapter<CustomersAdapter.CustomersViewHolder>() {
+class CustomersAdapter (val items: List<Customer>, val context: Context) : RecyclerView.Adapter<CustomersAdapter.CustomersViewHolder>() {
 
     override fun getItemCount(): Int {
         return items.size

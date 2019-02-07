@@ -7,17 +7,21 @@ import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    lateinit var preferencesHelper: PreferencesHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         setSupportActionBar(toolbar)
+
+
+        preferencesHelper = PreferencesHelper(this)
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
@@ -49,12 +53,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_inventory -> {
                 ChooseCustomerFragment.newInstance(2)
             }
-            /*R.id.nav_locksmith -> {
-                LockSmithsFragment()
-            }*/
-            R.id.nav_config -> {
-                SettingsFragment()
-            }
             R.id.nav_logout -> {
                 HomeFragment()
             }
@@ -71,44 +69,41 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
+        var intent : Intent
 
-
-        when (item.itemId) {
-            R.id.nav_home -> {
-                toolbar.title = "Llaves Altuna de México"
-            }
-            R.id.nav_payment -> {
-                toolbar.title = "Elegir Cliente"
-            }
-            R.id.nav_inventory -> {
-                toolbar.title = "Elegir Cliente"
-            }
-            /*R.id.nav_locksmith -> {
-                toolbar.title = "Cerrajeros"
-            }*/
-            R.id.nav_config -> {
-                toolbar.title = "Configuraciones"
-            }
-            else -> {
-                HomeFragment()
-            }
-        }
-
-        //////Remove this section when developing. It's just informative for dummy project
-        if (item.itemId == R.id.nav_login) {
-            //Intent to Login Activity
-            var intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        } else if (item.itemId == R.id.nav_locksmith) {
-            //Intent to Login Activity
-            var intent = Intent(this, LocksmithActivity::class.java)
-            startActivity(intent)
+        if (preferencesHelper.customerID == -1) {
+            Snackbar.make(findViewById(R.id.relativeLayoutHome),"Primero elige un cliente de la lista",Snackbar.LENGTH_SHORT).show()
         } else {
-            displayScreen(item.itemId)
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    toolbar.title = "Llaves Altuna de México"
+                }
+                R.id.nav_payment -> {
+                    intent = Intent(this, CollectionListActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_inventory -> {
+                    intent = Intent(this, ProductListActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_locksmith -> {
+                    intent = Intent(this, LocksmithActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_logout -> {
+                    preferencesHelper.loggedIn = false
+                    intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                else -> {
+                    toolbar.title = "Llaves Altuna de México"
+                }
+            }
         }
-        //////And change it for next line
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
 }

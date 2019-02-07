@@ -11,11 +11,15 @@ import kotlinx.android.synthetic.main.activity_product_list.*
 
 class ProductListActivity : AppCompatActivity() {
 
+    lateinit var preferencesHelper: PreferencesHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_list)
 
-        title = "Inventario"
+        preferencesHelper = PreferencesHelper(this)
+
+        title = "Inventario - " + preferencesHelper.customerName
 
         var references = arrayListOf("","","","","","","","","","","","")
 
