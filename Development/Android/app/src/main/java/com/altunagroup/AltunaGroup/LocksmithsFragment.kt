@@ -3,6 +3,7 @@ package com.altunagroup.AltunaGroup
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
@@ -86,14 +87,10 @@ class LocksmithsFragment : Fragment() {
         rv_locksmiths.addOnItemClickListener(object: OnItemClickListener {
             override fun onItemClicked(position: Int, view: View) {
                 // Your logic
-                //searchViewLocksmiths.setQuery("",false)
                 searchViewLocksmiths.clearFocus()
-                val fragment = NewLocksmithFragment()
-                val fragmentManager = activity!!.supportFragmentManager
-                val fragmentTransaction = fragmentManager.beginTransaction()
-                //fragmentTransaction.replace(, fragment)
-                fragmentTransaction.addToBackStack(null)
-                fragmentTransaction.commit()
+
+                (activity as LocksmithActivity).setLocksmithInfo(locksmithsForSearch.get(position).name)
+                (activity as LocksmithActivity).getNavigation().selectedItemId = R.id.navigation_new_locksmith
             }
         })
 

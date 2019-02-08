@@ -12,10 +12,12 @@ import android.provider.MediaStore
 import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_collection_list.*
 import kotlinx.android.synthetic.main.fragment_new_locksmith.*
 
 
@@ -42,6 +44,8 @@ class NewLocksmithFragment : Fragment() {
     private val CAMERA_REQUEST_CODE = 111
     private val REQUEST_GALLERY_CAMERA = 222
 
+    private var locksmithName: String = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,11 +60,23 @@ class NewLocksmithFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        locksmithName = arguments?.getString("locksmithName","") ?: ""
         return inflater.inflate(R.layout.fragment_new_locksmith, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if(locksmithName.isNotEmpty()){
+            (activity as LocksmithActivity).title = "Modificar - " + locksmithName
+            txtLocksmithName.setText(locksmithName)
+            txtCompany.setText(locksmithName)
+        }
+
+        var addresses = arrayListOf("A","B","C","D","E","F","G","H","I","J","K","L")
+
+        rv_addresses.layoutManager = LinearLayoutManager(context)
+        rv_addresses.adapter = AddressAdapter(addresses, context!!)
 
         imgLocksmithProfile.setOnClickListener {
             if (Build.VERSION.SDK_INT >= 23) {
