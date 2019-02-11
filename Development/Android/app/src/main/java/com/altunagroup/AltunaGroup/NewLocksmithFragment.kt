@@ -53,7 +53,7 @@ class NewLocksmithFragment : Fragment() {
     private var locksmithName: String = ""
 
 
-    var addresses = arrayListOf<String>("")
+    lateinit var addresses: ArrayList<String>
 
     //Dialog
     lateinit var dialog: Dialog
@@ -91,13 +91,14 @@ class NewLocksmithFragment : Fragment() {
             (activity as LocksmithActivity).title = "Modificar - " + locksmithName
             txtLocksmithName.setText(locksmithName)
             txtCompany.setText(locksmithName)
+            addresses = arrayListOf("Avenida de los Maestros, ext 1553, Los sauces, 456789, Jalisco, México","B")
         } else {
             (activity as LocksmithActivity).title = "Nuevo Registro"
             txtLocksmithName.setText("")
             txtCompany.setText("")
+            addresses = ArrayList()
         }
 
-        addresses = arrayListOf("Avenida de los Maestros, ext 1553, Los sauces, 456789, Jalisco, México","B")
 
         rv_addresses.layoutManager = LinearLayoutManager(context)
         rv_addresses.adapter = AddressAdapter(addresses, context!!)

@@ -20,9 +20,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_home)
         setSupportActionBar(toolbar)
 
-
-        preferencesHelper = PreferencesHelper(this)
-
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
@@ -71,7 +68,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         var intent : Intent
 
-        if (preferencesHelper.customerID == -1) {
+
+        preferencesHelper = PreferencesHelper(this)
+
+        if (preferencesHelper.customerID == -1 && item.itemId != R.id.nav_home) {
             Snackbar.make(findViewById(R.id.relativeLayoutHome),"Primero elige un cliente de la lista",Snackbar.LENGTH_SHORT).show()
         } else {
             when (item.itemId) {

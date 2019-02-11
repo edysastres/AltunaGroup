@@ -85,6 +85,8 @@ class HomeFragment : Fragment() {
 
         runLayoutAnimation(rv_customers_home)
 
+        preferencesHelper = PreferencesHelper(context!!)
+
         txtCustomer.text = if(preferencesHelper.customerName.equals("")) "Seleccione un cliente" else preferencesHelper.customerName
 
         rv_customers_home.addOnItemClickListener(object: OnItemClickListener {
@@ -124,6 +126,7 @@ class HomeFragment : Fragment() {
         })
 
         btnMenuPayment.setOnClickListener {
+            preferencesHelper = PreferencesHelper(context!!)
             if (preferencesHelper.customerID == -1) {
                 Snackbar.make(view,"Primero elige un cliente de la lista",Snackbar.LENGTH_SHORT).show()
             } else {
@@ -133,6 +136,7 @@ class HomeFragment : Fragment() {
         }
 
         cardMenuPayment.setOnClickListener {
+            preferencesHelper = PreferencesHelper(context!!)
             if (preferencesHelper.customerID == -1) {
                 Snackbar.make(view,"Primero elige un cliente de la lista",Snackbar.LENGTH_SHORT).show()
             } else {
@@ -142,6 +146,7 @@ class HomeFragment : Fragment() {
         }
 
         btnMenuInventory.setOnClickListener {
+            preferencesHelper = PreferencesHelper(context!!)
             if (preferencesHelper.customerID == -1) {
                 Snackbar.make(view,"Primero elige un cliente de la lista",Snackbar.LENGTH_SHORT).show()
             } else {
@@ -151,6 +156,7 @@ class HomeFragment : Fragment() {
         }
 
         cardMenuInventory.setOnClickListener {
+            preferencesHelper = PreferencesHelper(context!!)
             if (preferencesHelper.customerID == -1) {
                 Snackbar.make(view,"Primero elige un cliente de la lista",Snackbar.LENGTH_SHORT).show()
             } else {
