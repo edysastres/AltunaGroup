@@ -20,7 +20,7 @@ class AddressAdapter(val items: ArrayList<String>, val context: Context) : Recyc
 
     override fun onBindViewHolder(holder: AddressViewHolder, position: Int) {
         holder.txtAddresses.text = items.get(position)
-        holder.txtNumAddress.text = "" + position
+        holder.txtNumAddress.text = "" + (position + 1)
     }
 }
 

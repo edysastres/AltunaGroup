@@ -1,6 +1,7 @@
 package com.altunagroup.AltunaGroup
 
 import android.app.Activity
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -9,6 +10,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.support.design.widget.Snackbar
 import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
@@ -16,9 +18,13 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.PopupMenu
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_collection_list.*
 import kotlinx.android.synthetic.main.fragment_new_locksmith.*
+import kotlinx.android.synthetic.main.new_address_dialog.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -47,6 +53,13 @@ class NewLocksmithFragment : Fragment() {
     private var locksmithName: String = ""
 
 
+    var addresses = arrayListOf<String>("")
+
+    //Dialog
+    lateinit var dialog: Dialog
+    //Dialog
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -67,16 +80,48 @@ class NewLocksmithFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //Dialog
+        dialog = Dialog(context)
+        btnAddAddress.setOnClickListener {
+            showPopup(it)
+        }
+        //Dialog
+
         if(locksmithName.isNotEmpty()){
             (activity as LocksmithActivity).title = "Modificar - " + locksmithName
             txtLocksmithName.setText(locksmithName)
             txtCompany.setText(locksmithName)
+        } else {
+            (activity as LocksmithActivity).title = "Nuevo Registro"
+            txtLocksmithName.setText("")
+            txtCompany.setText("")
         }
 
-        var addresses = arrayListOf("A","B","C","D","E","F","G","H","I","J","K","L")
+        addresses = arrayListOf("Avenida de los Maestros, ext 1553, Los sauces, 456789, Jalisco, México","B")
 
         rv_addresses.layoutManager = LinearLayoutManager(context)
         rv_addresses.adapter = AddressAdapter(addresses, context!!)
+
+        rv_addresses.addOnItemClickListener(object: OnItemClickListener {
+            override fun onItemClicked(position: Int, view: View) {
+                // Your logic
+                var popup = PopupMenu(context, view)
+                popup.inflate(R.menu.address_menu)
+                popup.setOnMenuItemClickListener {
+                    when(it.itemId) {
+                        R.id.action_delete_address -> {
+                            addresses.removeAt(position)
+                            rv_addresses.adapter = AddressAdapter(addresses, context!!)
+                        }
+                        else -> {
+                            Toast.makeText(context, "Opción desconocida",Toast.LENGTH_LONG).show()
+                        }
+                    }
+                    true
+                }
+                popup.show()
+            }
+        })
 
         imgLocksmithProfile.setOnClickListener {
             if (Build.VERSION.SDK_INT >= 23) {
@@ -92,6 +137,36 @@ class NewLocksmithFragment : Fragment() {
                 openCamera()
             }
         }
+    }
+
+
+
+    private fun showPopup(view: View){
+        dialog.setContentView(R.layout.new_address_dialog)
+        var btnCloseDialog = dialog.findViewById<Button>(R.id.btnCancelDialog)
+        btnCloseDialog.setOnClickListener {
+            dialog.dismiss()
+        }
+        var btnAddAddress = dialog.findViewById<Button>(R.id.btnSaveDialog)
+        btnAddAddress.setOnClickListener {
+
+            //UI
+            var txtStreetDialog = dialog.findViewById<EditText>(R.id.txtStreetDialog)
+            var txtExtNumberDialog = dialog.findViewById<EditText>(R.id.txtExtNumberDialog)
+
+            if(txtStreetDialog.text.isEmpty()){
+                txtStreetDialog.setError("Este campo es requerido")
+            } else if (txtExtNumberDialog.text.isEmpty()){
+                txtExtNumberDialog.setError("Este campo es requerido")
+            } else {
+                addresses.add(txtStreetDialog.text.toString() + ", ext " + txtExtNumberDialog.text.toString())
+                //Refresh view
+                rv_addresses.adapter = AddressAdapter(addresses, context!!)
+                dialog.dismiss()
+            }
+        }
+        dialog.show()
+
     }
 
     private fun openCamera() {

@@ -37,6 +37,7 @@ class LocksmithActivity : AppCompatActivity() {
             }
             R.id.navigation_new_locksmith -> {
                 title = "Nuevo Registro"
+                /*
                 if(locksmithName.isNotEmpty()) {
                     fm.beginTransaction().remove(fragment2).commit()
                     var params = Bundle()
@@ -49,6 +50,15 @@ class LocksmithActivity : AppCompatActivity() {
                 } else {
                     fm.beginTransaction().hide(active).show(fragment2).commit()
                 }
+                */
+                fm.beginTransaction().remove(fragment2).commit()
+                var params = Bundle()
+                params.putString("locksmithName", locksmithName)
+                fragment2 = NewLocksmithFragment()
+                fragment2.arguments = params
+                fm.beginTransaction().add(R.id.relativeTabLocksmith, fragment2, "2").commit()
+                fm.beginTransaction().hide(active).show(fragment2).commit()
+
                 active = fragment2
             }
             else -> {

@@ -109,6 +109,21 @@ class LocksmithsFragment : Fragment() {
         })
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        (activity as LocksmithActivity).setLocksmithInfo("")
+    }
+
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
+        if(hidden) {
+
+        } else {
+            (activity as LocksmithActivity).setLocksmithInfo("")
+        }
+    }
+
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)
