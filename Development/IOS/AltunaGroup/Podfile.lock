@@ -3,7 +3,7 @@ PODS:
   - Kingfisher (5.1.1)
   - NewPopMenu (2.1.2)
   - SCLAlertView (0.8)
-  - SideMenu (4.0.0)
+  - SideMenu (5.0.3)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
@@ -11,7 +11,7 @@ DEPENDENCIES:
   - Kingfisher (~> 5.0)
   - NewPopMenu
   - SCLAlertView
-  - SideMenu (~> 4.0.0)
+  - SideMenu
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -28,9 +28,9 @@ SPEC CHECKSUMS:
   Kingfisher: 2558186963e5be42d98c5b110ccb3130148b77e4
   NewPopMenu: c6129e08e8192f6257ceb5f9a4357e1b59c6e2e7
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
-  SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 90ef6a3acf4d5f4d3b88819e5c4e5ba2d9b3a1fd
+PODFILE CHECKSUM: 4f5b8d4239165e1c3724d4c448410c6a7ec10881
 
 COCOAPODS: 1.5.3

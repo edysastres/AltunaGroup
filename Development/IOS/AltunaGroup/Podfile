@@ -8,7 +8,7 @@ target 'AltunaGroup' do
   # Pods for AltunaGroup
 
   # pod 'SideMenu', '~> 2.3.4'
-  pod 'SideMenu', '~> 4.0.0'
+  pod 'SideMenu'
 
   # pod 'Alamofire', '~> 4.7'
   pod 'Alamofire', '~> 5.0.0-beta.2'
