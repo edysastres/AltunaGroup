@@ -17,6 +17,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        //Globals
+        //LoggedIn
+        if((UserDefaults.standard.object(forKey: "LoggedIn")) != nil){
+            //Do nothing
+        } else {
+            UserDefaults.standard.set(false, forKey: "LoggedIn")
+        }
+        //Foreground
+        if((UserDefaults.standard.object(forKey: "Foreground")) != nil){
+            //Do nothing
+        } else {
+            UserDefaults.standard.set(true, forKey: "Foreground")
+        }
+        //CustomerID
+        if((UserDefaults.standard.object(forKey: "CustomerID")) != nil){
+            //Do nothing
+        } else {
+            UserDefaults.standard.set(-1, forKey: "CustomerID")
+        }
+        //CustomerName
+        if((UserDefaults.standard.object(forKey: "CustomerName")) != nil){
+            //Do nothing
+        } else {
+            UserDefaults.standard.set("", forKey: "CustomerName")
+        }
+        //Company
+        if((UserDefaults.standard.object(forKey: "Company")) != nil){
+            //Do nothing
+        } else {
+            UserDefaults.standard.set("", forKey: "Company")
+        }
+        
         return true
     }
 

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fKv-De-0gd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="NAK-pi-grV">
+            <objects>
+                <viewController id="fKv-De-0gd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UYQ-Jt-bCv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-iphone-wallpaper-24" translatesAutoresizingMaskIntoConstraints="NO" id="iHT-vO-24r">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jma_logo" translatesAutoresizingMaskIntoConstraints="NO" id="SgD-Tj-wKD">
+                                <rect key="frame" x="67.5" y="205.5" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="olH-eD-G8p"/>
+                                    <constraint firstAttribute="height" constant="128" id="vpW-Mo-8yg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iHT-vO-24r" firstAttribute="trailing" secondItem="UYQ-Jt-bCv" secondAttribute="trailing" id="9ep-zN-Ev0"/>
+                            <constraint firstItem="iHT-vO-24r" firstAttribute="leading" secondItem="UYQ-Jt-bCv" secondAttribute="leading" id="Bcb-sf-1CL"/>
+                            <constraint firstItem="iHT-vO-24r" firstAttribute="bottom" secondItem="UYQ-Jt-bCv" secondAttribute="bottom" id="DGH-8g-YYT"/>
+                            <constraint firstItem="SgD-Tj-wKD" firstAttribute="centerX" secondItem="UYQ-Jt-bCv" secondAttribute="centerX" id="Shy-rP-BYy"/>
+                            <constraint firstItem="SgD-Tj-wKD" firstAttribute="centerY" secondItem="UYQ-Jt-bCv" secondAttribute="centerY" constant="-64" id="Wdi-HC-yCi"/>
+                            <constraint firstItem="iHT-vO-24r" firstAttribute="top" secondItem="UYQ-Jt-bCv" secondAttribute="top" id="sm2-29-dVT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VcF-fk-EsI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5z-rC-Gw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="blue-iphone-wallpaper-24" width="750" height="1334"/>
+        <image name="jma_logo" width="188" height="188"/>
+    </resources>
+</document>

@@ -7,27 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AA6FB44221335D9009D51D5 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FB40221335D9009D51D5 /* MasterViewController.swift */; };
+		6AA6FB45221335D9009D51D5 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FB41221335D9009D51D5 /* MenuTableViewController.swift */; };
+		6AA6FB46221335D9009D51D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FB43221335D9009D51D5 /* LoginViewController.swift */; };
+		6AA6FB4A22133A90009D51D5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FB4722133A90009D51D5 /* Reachability.swift */; };
+		6AA6FB4C22133A90009D51D5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FB4922133A90009D51D5 /* Utilities.swift */; };
+		6AA6FB4E22134CF1009D51D5 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FB4D22134CF0009D51D5 /* PasswordViewController.swift */; };
+		6AA6FB522214C500009D51D5 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FB512214C500009D51D5 /* PaymentsViewController.swift */; };
+		6AA6FB552214E6AC009D51D5 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FB542214E6AC009D51D5 /* InventoryViewController.swift */; };
+		6AA6FB572215E1FC009D51D5 /* ReferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FB562215E1FC009D51D5 /* ReferenceViewController.swift */; };
+		6AA6FB5D2215EC7C009D51D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA6FB5C2215EC7C009D51D5 /* Main.storyboard */; };
+		6AA6FB5F2215ED84009D51D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA6FB5E2215ED84009D51D5 /* LaunchScreen.storyboard */; };
+		6AA6FB62221604CD009D51D5 /* LocksmithsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FB61221604CD009D51D5 /* LocksmithsViewController.swift */; };
+		6AA6FB6422161AE6009D51D5 /* NewLocksmithViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6FB6322161AE6009D51D5 /* NewLocksmithViewController.swift */; };
 		A1465EAF5B8CBE73F75CBAE5 /* Pods_AltunaGroup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45AD843E9E8CA6DC4C6373C8 /* Pods_AltunaGroup.framework */; };
 		C38E377C21F0C5C1000B88B1 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E377B21F0C5C1000B88B1 /* Helper.swift */; };
 		C3F67F4821F0C24B003B1CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F67F4721F0C24B003B1CBF /* AppDelegate.swift */; };
-		C3F67F4A21F0C24B003B1CBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F67F4921F0C24B003B1CBF /* ViewController.swift */; };
-		C3F67F4D21F0C24B003B1CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F67F4B21F0C24B003B1CBF /* Main.storyboard */; };
+		C3F67F4A21F0C24B003B1CBF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F67F4921F0C24B003B1CBF /* HomeViewController.swift */; };
 		C3F67F5021F0C24B003B1CBF /* AltunaGroup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3F67F4E21F0C24B003B1CBF /* AltunaGroup.xcdatamodeld */; };
 		C3F67F5221F0C24C003B1CBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F67F5121F0C24C003B1CBF /* Assets.xcassets */; };
-		C3F67F5521F0C24C003B1CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F67F5321F0C24C003B1CBF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		45AD843E9E8CA6DC4C6373C8 /* Pods_AltunaGroup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltunaGroup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AA6FB40221335D9009D51D5 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		6AA6FB41221335D9009D51D5 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		6AA6FB43221335D9009D51D5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6AA6FB4722133A90009D51D5 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		6AA6FB4922133A90009D51D5 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		6AA6FB4D22134CF0009D51D5 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		6AA6FB512214C500009D51D5 /* PaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		6AA6FB542214E6AC009D51D5 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		6AA6FB562215E1FC009D51D5 /* ReferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceViewController.swift; sourceTree = "<group>"; };
+		6AA6FB5C2215EC7C009D51D5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6AA6FB5E2215ED84009D51D5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6AA6FB61221604CD009D51D5 /* LocksmithsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocksmithsViewController.swift; sourceTree = "<group>"; };
+		6AA6FB6322161AE6009D51D5 /* NewLocksmithViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocksmithViewController.swift; sourceTree = "<group>"; };
 		8C40E03FC1EB4039D71A20B3 /* Pods-AltunaGroup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltunaGroup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AltunaGroup/Pods-AltunaGroup.debug.xcconfig"; sourceTree = "<group>"; };
 		C38E377B21F0C5C1000B88B1 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		C3F67F4421F0C24B003B1CBF /* AltunaGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltunaGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F67F4721F0C24B003B1CBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C3F67F4921F0C24B003B1CBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C3F67F4C21F0C24B003B1CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C3F67F4921F0C24B003B1CBF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C3F67F4F21F0C24B003B1CBF /* AltunaGroup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AltunaGroup.xcdatamodel; sourceTree = "<group>"; };
 		C3F67F5121F0C24C003B1CBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C3F67F5421F0C24C003B1CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3F67F5621F0C24C003B1CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C89546F465CEE0BDF7C3FCBD /* Pods-AltunaGroup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltunaGroup.release.xcconfig"; path = "Pods/Target Support Files/Pods-AltunaGroup/Pods-AltunaGroup.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +66,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AA6FB42221335D9009D51D5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6AA6FB43221335D9009D51D5 /* LoginViewController.swift */,
+				6AA6FB4D22134CF0009D51D5 /* PasswordViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6AA6FB4F2214C4C4009D51D5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C3F67F4921F0C24B003B1CBF /* HomeViewController.swift */,
+				6AA6FB41221335D9009D51D5 /* MenuTableViewController.swift */,
+				6AA6FB40221335D9009D51D5 /* MasterViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6AA6FB502214C4E7009D51D5 /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				6AA6FB512214C500009D51D5 /* PaymentsViewController.swift */,
+			);
+			path = Payments;
+			sourceTree = "<group>";
+		};
+		6AA6FB532214E69B009D51D5 /* Inventory */ = {
+			isa = PBXGroup;
+			children = (
+				6AA6FB542214E6AC009D51D5 /* InventoryViewController.swift */,
+				6AA6FB562215E1FC009D51D5 /* ReferenceViewController.swift */,
+			);
+			path = Inventory;
+			sourceTree = "<group>";
+		};
+		6AA6FB60221604B3009D51D5 /* Locksmith */ = {
+			isa = PBXGroup;
+			children = (
+				6AA6FB61221604CD009D51D5 /* LocksmithsViewController.swift */,
+				6AA6FB6322161AE6009D51D5 /* NewLocksmithViewController.swift */,
+			);
+			path = Locksmith;
+			sourceTree = "<group>";
+		};
 		A2414F85A2843DB2A4989742 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,14 +141,20 @@
 		C3F67F4621F0C24B003B1CBF /* AltunaGroup */ = {
 			isa = PBXGroup;
 			children = (
+				6AA6FB60221604B3009D51D5 /* Locksmith */,
+				6AA6FB532214E69B009D51D5 /* Inventory */,
+				6AA6FB502214C4E7009D51D5 /* Payments */,
+				6AA6FB4F2214C4C4009D51D5 /* Home */,
+				6AA6FB42221335D9009D51D5 /* Login */,
 				C3F67F4721F0C24B003B1CBF /* AppDelegate.swift */,
-				C3F67F4921F0C24B003B1CBF /* ViewController.swift */,
-				C3F67F4B21F0C24B003B1CBF /* Main.storyboard */,
+				6AA6FB4722133A90009D51D5 /* Reachability.swift */,
+				6AA6FB4922133A90009D51D5 /* Utilities.swift */,
 				C3F67F5121F0C24C003B1CBF /* Assets.xcassets */,
-				C3F67F5321F0C24C003B1CBF /* LaunchScreen.storyboard */,
 				C3F67F5621F0C24C003B1CBF /* Info.plist */,
 				C3F67F4E21F0C24B003B1CBF /* AltunaGroup.xcdatamodeld */,
 				C38E377B21F0C5C1000B88B1 /* Helper.swift */,
+				6AA6FB5C2215EC7C009D51D5 /* Main.storyboard */,
+				6AA6FB5E2215ED84009D51D5 /* LaunchScreen.storyboard */,
 			);
 			path = AltunaGroup;
 			sourceTree = "<group>";
@@ -137,7 +210,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = C3F67F3B21F0C24B003B1CBF;
 			productRefGroup = C3F67F4521F0C24B003B1CBF /* Products */;
@@ -154,9 +226,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3F67F5521F0C24C003B1CBF /* LaunchScreen.storyboard in Resources */,
+				6AA6FB5F2215ED84009D51D5 /* LaunchScreen.storyboard in Resources */,
 				C3F67F5221F0C24C003B1CBF /* Assets.xcassets in Resources */,
-				C3F67F4D21F0C24B003B1CBF /* Main.storyboard in Resources */,
+				6AA6FB5D2215EC7C009D51D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,39 +296,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3F67F4A21F0C24B003B1CBF /* ViewController.swift in Sources */,
+				6AA6FB46221335D9009D51D5 /* LoginViewController.swift in Sources */,
+				6AA6FB552214E6AC009D51D5 /* InventoryViewController.swift in Sources */,
+				6AA6FB4E22134CF1009D51D5 /* PasswordViewController.swift in Sources */,
+				6AA6FB44221335D9009D51D5 /* MasterViewController.swift in Sources */,
+				C3F67F4A21F0C24B003B1CBF /* HomeViewController.swift in Sources */,
+				6AA6FB45221335D9009D51D5 /* MenuTableViewController.swift in Sources */,
+				6AA6FB6422161AE6009D51D5 /* NewLocksmithViewController.swift in Sources */,
+				6AA6FB572215E1FC009D51D5 /* ReferenceViewController.swift in Sources */,
 				C3F67F4821F0C24B003B1CBF /* AppDelegate.swift in Sources */,
 				C3F67F5021F0C24B003B1CBF /* AltunaGroup.xcdatamodeld in Sources */,
+				6AA6FB4A22133A90009D51D5 /* Reachability.swift in Sources */,
+				6AA6FB522214C500009D51D5 /* PaymentsViewController.swift in Sources */,
+				6AA6FB4C22133A90009D51D5 /* Utilities.swift in Sources */,
 				C38E377C21F0C5C1000B88B1 /* Helper.swift in Sources */,
+				6AA6FB62221604CD009D51D5 /* LocksmithsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		C3F67F4B21F0C24B003B1CBF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C3F67F4C21F0C24B003B1CBF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C3F67F5321F0C24C003B1CBF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C3F67F5421F0C24C003B1CBF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C3F67F5721F0C24C003B1CBF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -318,6 +383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
