@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class NewLocksmithViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -38,15 +39,32 @@ class NewLocksmithViewController: UIViewController, UITableViewDelegate, UITable
         imgPhoto.addGestureRecognizer(cameraTap)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let locksmith = Utilities.sharedInstance.selectedLocksmith {
+            txtName.text = locksmith.name
+            txtCompany.text = locksmith.name
+        } else {
+            //Clear UI
+            txtName.text = ""
+            txtCompany.text = ""
+        }
+    }
+    
     @objc func hideKeyboard(){
         view.endEditing(true)
     }
     
     @objc func takePhoto(){
-        imagePicker =  UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
+        if(UIImagePickerController.isSourceTypeAvailable(.camera)){
+            imagePicker =  UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            present(imagePicker, animated: true, completion: nil)
+        } else {
+            _ = SCLAlertView().showInfo("Error...", subTitle: "La cámara no esta disponible", closeButtonTitle: "Ok")
+        }
     }
     
     //MARK: - Done image capture here
@@ -57,8 +75,37 @@ class NewLocksmithViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBAction func addAddress(_ sender: UIButton) {
         
-        addresses.append("asdasd asdas")
-        tableView.reloadData()
+        let appearance = SCLAlertView.SCLAppearance(shouldAutoDismiss: false)
+        
+        let alert = SCLAlertView(appearance: appearance)
+        
+        var alertViewResponder = SCLAlertViewResponder(alertview: alert)
+        
+        let txtStreet = alert.addTextField("Calle")
+        let txtExtNumber = alert.addTextField("Exterior")
+        let txtIntNumber = alert.addTextField("Interior")
+        let txtRegion = alert.addTextField("Colonia")
+        let txtZIPCode = alert.addTextField("Código Postal")
+        txtZIPCode.keyboardType = .numberPad
+        let txtCity = alert.addTextField("Ciudad")
+        let txtEmail = alert.addTextField("Email")
+        txtEmail.keyboardType = .emailAddress
+        let txtPhone = alert.addTextField("Teléfono")
+        txtPhone.keyboardType = .numberPad
+        
+        alert.addButton("Guardar") {
+            if ((txtStreet.text?.isEmpty)!){
+                _ = SCLAlertView().showWarning("Información incompleta...", subTitle: "Ingrese el nombre de la calle", closeButtonTitle:"OK")
+            } else if ((txtExtNumber.text?.isEmpty)!){
+                _ = SCLAlertView().showWarning("Información incompleta...", subTitle: "Ingrese el número de la calle", closeButtonTitle:"OK")
+            } else {
+                let address = txtStreet.text! + " " + txtExtNumber.text!
+                self.addresses.append(address)
+                self.tableView.reloadData()
+                alertViewResponder.close()
+            }
+        }
+        alertViewResponder = alert.showInfo("Nueva dirección", subTitle: "Ingrese los datos del domicilio", closeButtonTitle: "Cancelar")
     }
     
     @IBAction func save(_ sender: UIButton) {

@@ -28,12 +28,12 @@ class Utilities {
     
     var screens = [Int]()
     
-    //Inspections
-    var inspectionsUpdate = false
-    var inspectionsUpdateUI = false
+    var selectedLocksmith: LocksmithItem?
     
     //Push Notifications Screen
     var pushNotificationsScreen = -1
+    
+    
     
     init(){
     }

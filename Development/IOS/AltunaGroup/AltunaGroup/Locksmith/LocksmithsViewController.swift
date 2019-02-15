@@ -48,6 +48,12 @@ class LocksmithsViewController: UIViewController, UITableViewDelegate, UITableVi
         locksmithsForSearch = locksmiths
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Utilities.sharedInstance.selectedLocksmith = nil
+    }
+    
     @objc func hideKeyboard(){
         view.endEditing(true)
     }
@@ -98,7 +104,8 @@ class LocksmithsViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        Utilities.sharedInstance.selectedLocksmith = locksmiths[indexPath.row]
+        self.tabBarController?.selectedIndex = 1
     }
     
 }
