@@ -7,11 +7,20 @@
     <string name="nav_header_subtitle">usuario</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_filter">Filtrar</string>
-
+    <string name="activities_events">Eventos</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_locksmith">LocksmithActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="button_invite_more">Agregar invitados</string>
+    <string name="button_delete">Des-invitar</string>
+    <string name="activity_invite_locksmith">Invitar cerrajero</string>
+    <string name="action_ok">Ok</string>
+    <string name="action_add">Agregar</string>
+    <string name="hints_name">Nombre</string>
+    <string name="action_cancel">Razón Social</string>
+    <string name="hints_rfc">Razón Social</string>
+    <string name="activity_add_locksmith">Agregar cerrajero</string>
 </resources>

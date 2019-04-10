@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/storyboard"
+            app:startDestination="@id/loginActivity">
+
+    <activity android:id="@+id/loginActivity" android:name="com.altunagroup.AltunaGroup.LoginActivity"
+              android:label="activity_login" tools:layout="@layout/activity_login">
+        <action
+                android:id="@+id/action_loginActivity_to_eventsActivity"
+                app:destination="@id/eventsActivity" />
+    </activity>
+    <activity android:id="@+id/eventsActivity" android:name="com.altunagroup.AltunaGroup.EventsActivity"
+              android:label="activity_events" tools:layout="@layout/activity_events">
+        <action
+                android:id="@+id/action_eventsActivity_to_inviteLocksmithActivity"
+                app:destination="@id/inviteLocksmithActivity" />
+    </activity>
+
+    <activity android:id="@+id/inviteLocksmithActivity" android:name="com.altunagroup.AltunaGroup.InviteLocksmithActivity"
+              android:label="@string/activity_invite_locksmith" tools:layout="@layout/activity_invite_locksmith">
+        <action
+                android:id="@+id/action_inviteLocksmithActivity_to_eventsActivity"
+                app:destination="@id/eventsActivity" />
+        <action
+                android:id="@+id/action_inviteLocksmithActivity_to_addLocksmith"
+                app:destination="@id/addLocksmithActivity" />
+    </activity>
+
+    <activity android:id="@+id/addLocksmithActivity" android:name="com.altunagroup.AltunaGroup.AddLocksmithActivity"
+              android:label="@string/activity_invite_locksmith" tools:layout="@layout/activity_add_locksmith">
+        <action
+                android:id="@+id/action_addLocksmithActivity_to_addLocksmithAddressActivity"
+                app:destination="@id/addLocksmithAddressActivity" />
+    </activity>
+
+    <activity android:id="@+id/addLocksmithAddressActivity" android:name="com.altunagroup.AltunaGroup.AddAddressActivity"
+              android:label="@string/activity_invite_locksmith" tools:layout="@layout/activity_add_address">
+
+    </activity>
+
+</navigation>

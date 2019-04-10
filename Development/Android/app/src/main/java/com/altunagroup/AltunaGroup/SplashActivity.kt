@@ -25,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
 
             var intent: Intent
             if(preferencesHelper.loggedIn) {
-                intent = Intent(this, HomeActivity::class.java)
+                intent = Intent(this, EventsActivity::class.java)
                 startActivity(intent)
             } else {
                 intent = Intent(this, LoginActivity::class.java)
